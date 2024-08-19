@@ -6,32 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Pesquisa Binaria Simples</title>
+  <title>Busca binária Simples</title>
 </head>
 
 <body>
   <div class="main-container">
-    <h1>Pesquisa Binaria</h1>
+    <h1>Busca Binária</h1>
     <div class="container">
-
-      <label for="Num">Numero:</label>
-      <input class="valorNum" size="45" type="text" style="width: 160px;">
-      <label for="Numero:">Lista:</label>
+      <p class="description-binary-search">A busca binária é um algoritmo eficiente para localizar um elemento em uma lista ordenada, dividindo repetidamente o intervalo de busca pela metade. Sua complexidade O(log n) a torna rápida em grandes datasets, mas exige que a coleção esteja previamente ordenada, o que pode ser um contra em dados dinâmicos ou não ordenados. </p>
+      <input class="valorNum" size="45" type="text" style="width: 160px;" placeholder="Insira um numero para buscar" required>
       <div class="list">
-        <span>[</span>
-        <input class="inputNum" size="45" type="text" style="width: 200px;">
-        <span>]</span>
+        <input class="inputNum" size="45" type="text" placeholder="Insira uma Array (Exemplo: 5 23 30 8 2 14)" style="width: 200px;" required>
       </div>
 
       <br>
-      <p class="ex">Exemplo: 1, 2, 3, 4</p>
     </div>
     <div class="test">
-      <button>Testar</button>
+      <button>Buscar</button>
     </div>
+    <div class="result"></div>
   </div>
 
-  <script src="script.js"></script>
+  <script type="module" src="./script.js"></script>
 </body>
 
 </html>
