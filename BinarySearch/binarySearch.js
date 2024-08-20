@@ -37,23 +37,35 @@ function binarySearch(targetArray, targetValue) {
 }
 
 function displayResult(array, searchResult) {
-  if (!searchResult || !array) {
-    return;
-  }
   resultDiv.innerHTML = '';
+  const statusMessage = {
+    sucess: {
+      message: `
+      Foram <span>${searchResult && searchResult.counter}</span> 
+      palpites para chegar no número de posição 
+      <span>${searchResult && searchResult.position}</span>`,
+    },
+    error: {
+      notFoundInputValue: {
+        message: '<span>Ops! Insira valores nos campos correspondentes</span>',
+      },
+      notExistInArray: {
+        message:
+          '<span>Coloque um número que exista na Array de valores</span>',
+      },
+    },
+  };
   const resultMessage = document.createElement('p');
-
   if (searchResult && resultDiv) {
     const sortedArrayElement = document.createElement('code');
     sortedArrayElement.textContent = array.join(' ');
-    resultMessage.innerHTML = `
-      Foram <span>${searchResult.counter}</span> 
-      palpites para chegar no número de posição 
-      <span>${searchResult.position}</span>`;
+    resultMessage.innerHTML = statusMessage.sucess.message;
     resultDiv.classList.add(activeClass);
     resultDiv.appendChild(sortedArrayElement);
+  } else if (!inputArrayField.value || !targetValueField.value) {
+    resultMessage.innerHTML = statusMessage.error.notFoundInputValue.message;
   } else {
-    resultMessage.innerHTML = `<span>Coloque um número que exista na lista</span>`;
+    resultMessage.innerHTML = statusMessage.error.notExistInArray.message;
   }
 
   resultDiv.appendChild(resultMessage);
