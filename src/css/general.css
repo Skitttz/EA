@@ -1,0 +1,44 @@
+#main-container {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.layout-container {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 12px;
+  background-color: #222;
+  padding-inline: 30px;
+  padding-block: 32px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 24px;
+}
+
+.list {
+  justify-content: start;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-radius: 4px;
+}
+
+.link {
+  padding: 8px 12px;
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  color: #333;
+  border-radius: 12px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+.book-container img {
+  max-width: 240px;
+}
