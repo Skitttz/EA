@@ -18,3 +18,18 @@ li {
 body {
   background-color: #333;
 }
+
+@media only screen and (hover:none) and (pointer: coarse) {
+
+  input,
+  select,
+  textarea {
+    font-size: 11px !important;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    font-size: 16px !important;
+  }
+}
